@@ -3,6 +3,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -19,10 +20,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.databinding.FragmentProfileBinding;
 import com.example.myapplication.databinding.FragmentTransformBinding;
 import com.example.myapplication.databinding.ItemTransformBinding;
+import com.example.myapplication.ui.ProfileViewModel;
+import com.example.myapplication.ui.authentication.LoginActivity;
+import com.example.myapplication.ui.clases.User;
+import com.example.myapplication.ui.database.UserStorage;
 import com.example.myapplication.ui.eventfun.EventHelpActivity;
 import com.example.myapplication.ui.eventfun.EventOrgActivity;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,40 +58,44 @@ public class TransformFragment extends Fragment {
 
 
 
+        tViewModel.getUserRole().observe(getViewLifecycleOwner(), role -> {Toast.makeText(getContext(), "r"+role, Toast.LENGTH_SHORT).show();
+        ListAdapter<String, TransformViewHolder> adapter = new TransformAdapter(item -> {
 
-           ListAdapter<String, TransformViewHolder> adapter = new TransformAdapter(item -> {
+                if (role==true){
+            Intent intent = new Intent(getContext(), EventOrgActivity.class);
+            Toast.makeText(getContext(), item.toString(), Toast.LENGTH_SHORT).show();
 
-
-                    Intent intent = new Intent(getContext(), EventOrgActivity.class);
+            startActivity(intent);
+            }
+               else{
+                    Intent intent = new Intent(getContext(), EventHelpActivity.class);
                     Toast.makeText(getContext(), item.toString(), Toast.LENGTH_SHORT).show();
 
                     startActivity(intent);
+                }
+
+        });
+
+        recyclerView.setAdapter(adapter);
+        tViewModel.getTexts().observe(getViewLifecycleOwner(), adapter::submitList);
+
+       });
 
 
 
 
-         });
-
-            recyclerView.setAdapter(adapter);
-            tViewModel.getTexts().observe(getViewLifecycleOwner(), adapter::submitList);
 
 
-
-
-
-
-
-        // Set up buttons
         binding.button1.setOnClickListener(v -> {
-            // Handle button 1 click
+
         });
 
         binding.button2.setOnClickListener(v -> {
-            // Handle button 2 click
+
         });
 
         binding.button3.setOnClickListener(v -> {
-            // Handle button 3 click
+
         });
 
         return root;
@@ -171,4 +182,4 @@ public class TransformFragment extends Fragment {
             textView = binding.textViewItemTransform;
         }
     }
-    }
+}

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
 
+import com.example.myapplication.ui.ProfileViewModel;
 import com.example.myapplication.ui.clases.User;
 import com.example.myapplication.ui.database.UserStorage;
 import com.example.myapplication.ui.eventfun.EventAddActivity;
@@ -25,7 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ProfileViewModel mViewModel;
 
     private TransformViewModel tViewModel;
     public boolean role=false;
@@ -42,7 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        ProfileViewModel profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+        profileViewModel.setUserId(userId);
+        profileViewModel.setUserName(user.getName());
+        profileViewModel.setUserEmail(user.getEmail());
+        mViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+        mViewModel.getUserRole().observe(this, role -> {
+            this.role=role;
+            TransformViewModel transformViewModel = new ViewModelProvider(this).get(TransformViewModel.class);
+            transformViewModel.setUserId(userId);
+            transformViewModel.setUserRole(role);
+        });
 
 
 
@@ -93,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         if (navView == null) {
             // The navigation drawer already has the items including the items in the overflow menu
       */      // We only inflate the overflow menu if the navigation drawer isn't visible
-            getMenuInflater().inflate(R.menu.overflow, menu);
-       // }
+        getMenuInflater().inflate(R.menu.overflow, menu);
+        // }
         return true;
     }
 
@@ -114,5 +125,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 }
-
 

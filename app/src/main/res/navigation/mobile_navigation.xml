@@ -9,9 +9,11 @@
         android:name="com.example.myapplication.ui.transform.TransformFragment"
         android:label="@string/menu_transform"
         tools:layout="@layout/fragment_transform" />
-
-
-
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.myapplication.ui.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_settings"
