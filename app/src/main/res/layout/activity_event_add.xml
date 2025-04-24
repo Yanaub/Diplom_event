@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_main"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/arrowShowAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrow"
+        app:tint="#80000000" />
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/textCreate"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Создание мероприятия"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <!-- Поле для названия -->
+    <EditText
+        android:id="@+id/titleEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:drawablePadding="8dp"
+        android:hint="Название"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Поле для описания -->
+    <EditText
+        android:id="@+id/descriptionEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:drawablePadding="8dp"
+        android:hint="Описание"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Поле для места проведения -->
+    <EditText
+        android:id="@+id/locationEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:drawablePadding="8dp"
+        android:hint="Место проведения"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Кнопка для добавления изображения -->
+    <Button
+        android:id="@+id/imageButtonEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue_dark"
+        android:fontFamily="sans-serif"
+        android:text="Добавить фото"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
+
+    <!-- Поле для выбора даты -->
+    <EditText
+        android:id="@+id/dateEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:drawablePadding="8dp"
+        android:hint="Дата (дд.мм.гггг)"
+        android:inputType="date"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Поле для выбора времени -->
+    <EditText
+        android:id="@+id/timeEventAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:drawablePadding="8dp"
+        android:hint="Время (чч.мм)"
+        android:inputType="time"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Кнопка для отправки данных -->
+    <Button
+        android:id="@+id/EventAddButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue_dark"
+        android:fontFamily="sans-serif"
+        android:text="Создать мероприятия"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
+</LinearLayout>
+    </ScrollView>
+

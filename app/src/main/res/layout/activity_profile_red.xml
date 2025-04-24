@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_main"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/arrowShowRedPr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/arrow"
+            app:tint="#80000000" />
+
+
+        <TextView
+            android:id="@+id/textCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Изменение аккаунта"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/ProfRedName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:drawablePadding="8dp"
+            android:hint="Имя"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/ProfRedEm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:drawablePadding="8dp"
+            android:hint="Почта"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/ProfRedPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:drawablePadding="8dp"
+            android:hint="Пароль"
+            android:inputType="date"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+
+        <Button
+            android:id="@+id/ProfRedButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/blue_dark"
+            android:fontFamily="sans-serif"
+            android:text="Сохранить"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+</ScrollView>
+
